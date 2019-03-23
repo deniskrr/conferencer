@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-    <style name="Theme.Material_Light" parent="Theme.AppCompat.Light">
-        <item name="pageBackground">@style/page_background_gray</item>
+    <style name="Theme.Conforange" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="button">@style/Widget.Button.Primary</item>
+        <item name="edittext"> @style/Widget.EditText.Primary</item>
     </style>
     
 </resources>
