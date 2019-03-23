@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    -- =============================================================== -->
+    <!-- Custom theme style -->
+    <!-- =============================================================== -->
+
+    <style name="page_background_gray">
+        <item name="android:background">@drawable/gray_gradient_background</item>
+        <item name="android:paddingLeft">@dimen/activity_horizontal_padding</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_padding</item>
+    </style>
+
 </resources>
