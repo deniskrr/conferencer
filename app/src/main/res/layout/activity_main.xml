@@ -16,18 +16,20 @@
             android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
             app:layout_constraintStart_toStartOf="@+id/edittext_username_register"
             android:layout_marginBottom="199dp"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="48dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView"/>
     <EditText
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/edittext_username_register"
             android:background="@drawable/edittext_rounded_white" android:hint="Username"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="200dp"
-            app:layout_constraintTop_toTopOf="parent" style="?edittext" android:layout_marginLeft="80dp"
-            android:layout_marginStart="80dp" android:layout_marginEnd="80dp" android:layout_marginRight="80dp"/>
+            app:layout_constraintTop_toTopOf="parent" style="?edittext"
+            android:layout_marginEnd="@dimen/activity_margin_horizontal"
+            android:layout_marginStart="@dimen/activity_margin_horizontal"/>
     <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -48,5 +50,14 @@
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/edittext_email_register"
             app:layout_constraintStart_toStartOf="@+id/edittext_username_register"
             app:layout_constraintEnd_toEndOf="@+id/edittext_username_register" android:hint="Password"/>
+    <TextView
+            android:text="Already have an account?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_password_register"
+            app:layout_constraintStart_toStartOf="@+id/edittext_username_register"
+            app:layout_constraintEnd_toEndOf="@+id/edittext_username_register"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
