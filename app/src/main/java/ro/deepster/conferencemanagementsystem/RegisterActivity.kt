@@ -6,6 +6,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_register.*
+import ro.deepster.conferencemanagementsystem.domain.User
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -52,7 +53,5 @@ class RegisterActivity : AppCompatActivity() {
                     }
                 }
         }
-
-
     }
 }
