@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:id="@+id/textView"
+            android:id="@+id/text_no_account_login"
             app:layout_constraintTop_toBottomOf="@+id/button_login"
             app:layout_constraintStart_toStartOf="@+id/edittext_username_login"
             app:layout_constraintEnd_toEndOf="@+id/edittext_username_login" android:layout_marginTop="16dp"/>
