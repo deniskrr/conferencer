@@ -1,4 +1,4 @@
-package ro.deepster.conferencemanagementsystem
+package ro.deepster.conferencemanagementsystem.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_register.*
-import ro.deepster.conferencemanagementsystem.domain.User
+import ro.deepster.conferencemanagementsystem.R
+import ro.deepster.conferencemanagementsystem.model.User
 
 class RegisterActivity : AppCompatActivity() {
 
