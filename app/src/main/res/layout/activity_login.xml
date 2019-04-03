@@ -12,9 +12,8 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:inputType="textPersonName|textEmailAddress"
-
-            android:id="@+id/edittext_username_login"
-            android:hint="Username / E-mail"
+            android:id="@+id/edittext_email_login"
+            android:hint="E-mail"
             style="@style/Widget.EditText.Primary"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="40dp"
@@ -29,10 +28,10 @@
             android:id="@+id/edittext_password_login"
             android:hint="Password"
             style="@style/Widget.EditText.Primary"
-            app:layout_constraintTop_toBottomOf="@+id/edittext_username_login"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_email_login"
             android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="@+id/edittext_username_login"
-            app:layout_constraintEnd_toEndOf="@+id/edittext_username_login"/>
+            app:layout_constraintStart_toStartOf="@+id/edittext_email_login"
+            app:layout_constraintEnd_toEndOf="@+id/edittext_email_login"/>
 
     <TextView
             android:text="Login"
@@ -60,6 +59,6 @@
             android:textColor="@color/white"
             android:id="@+id/text_no_account_login"
             app:layout_constraintTop_toBottomOf="@+id/button_login"
-            app:layout_constraintStart_toStartOf="@+id/edittext_username_login"
-            app:layout_constraintEnd_toEndOf="@+id/edittext_username_login" android:layout_marginTop="16dp"/>
+            app:layout_constraintStart_toStartOf="@+id/edittext_email_login"
+            app:layout_constraintEnd_toEndOf="@+id/edittext_email_login" android:layout_marginTop="16dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

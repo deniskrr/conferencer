@@ -41,4 +41,15 @@ class UserViewModel : ViewModel() {
         database.collection("users").document(username)
             .set(user)
     }
+
+    fun getUser(userId: String): User? {
+        var user: User? = null
+        usersRef.document("$userId").get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    user = document.toObject(User::class.java)
+                }
+            }
+        return user
+    }
 }
