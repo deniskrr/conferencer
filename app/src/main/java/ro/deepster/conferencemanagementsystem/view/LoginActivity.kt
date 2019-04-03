@@ -1,9 +1,10 @@
-package ro.deepster.conferencemanagementsystem
+package ro.deepster.conferencemanagementsystem.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_login.*
+import ro.deepster.conferencemanagementsystem.R
 
 class LoginActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package ro.deepster.conferencemanagementsystem.domain
+package ro.deepster.conferencemanagementsystem.model
 
 import com.google.firebase.firestore.Exclude
 import com.google.firebase.firestore.IgnoreExtraProperties
