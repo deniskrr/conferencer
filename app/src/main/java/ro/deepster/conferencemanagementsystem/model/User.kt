@@ -10,6 +10,8 @@ data class User(
     var email: String
 ) {
 
+    constructor() : this("", "", "") {}
+
     @Exclude
     fun toMap(): Map<String, Any?> {
         return mapOf(
