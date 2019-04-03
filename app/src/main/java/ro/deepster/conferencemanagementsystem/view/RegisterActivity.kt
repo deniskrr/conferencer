@@ -4,22 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProviders
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_register.*
 import ro.deepster.conferencemanagementsystem.R
-import ro.deepster.conferencemanagementsystem.model.User
+import ro.deepster.conferencemanagementsystem.viewmodel.UserViewModel
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-    private lateinit var database: FirebaseFirestore
-
-    private fun writeNewUser(userId: String, username: String, email: String) {
-        val user = User(userId, username, email)
-        database.collection("users").document(username)
-            .set(user)
-    }
+    private lateinit var userModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +21,9 @@ class RegisterActivity : AppCompatActivity() {
 
         // Initialize Firebase components
         auth = FirebaseAuth.getInstance()
-        database = FirebaseFirestore.getInstance()
+
+        // Get the viewmodel
+        userModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
 
         button_register.setOnClickListener {
             val username = edittext_username_register.text.toString()
@@ -47,7 +43,7 @@ class RegisterActivity : AppCompatActivity() {
 
                         // Write user to database
                         val userId = auth.currentUser!!.uid
-                        writeNewUser(userId, username, email)
+                        userModel.writeNewUser(userId, username, email)
 
                         // TODO Start main activity
                     } else {
