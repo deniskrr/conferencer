@@ -2,6 +2,8 @@ package ro.deepster.conferencemanagementsystem.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import ro.deepster.conferencemanagementsystem.R
@@ -16,9 +18,30 @@ class MainActivity : AppCompatActivity() {
 
         // Initialize Firebase components
         auth = FirebaseAuth.getInstance()
-        if (auth.currentUser == null){
+
+        checkLoginStatus()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.nav_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.menu_sign_out -> {
+                auth.signOut()
+                checkLoginStatus()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun checkLoginStatus() {
+        if (auth.currentUser == null) {
             val intent = Intent(baseContext, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }
