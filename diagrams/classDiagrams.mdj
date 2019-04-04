@@ -773,7 +773,7 @@
 											"font": "Arial;13;1",
 											"left": 293,
 											"top": 207,
-											"width": 356.890625,
+											"width": 360.1533203125,
 											"height": 13,
 											"text": "RegisterActivity"
 										},
@@ -806,7 +806,7 @@
 									"font": "Arial;13;0",
 									"left": 288,
 									"top": 200,
-									"width": 366.890625,
+									"width": 370.1533203125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFp5GsJ0U12bmI="
@@ -843,7 +843,7 @@
 											"font": "Arial;13;0",
 											"left": 293,
 											"top": 230,
-											"width": 356.890625,
+											"width": 360.1533203125,
 											"height": 13,
 											"text": "-auth: FirebaseAuth",
 											"horizontalAlignment": 0
@@ -860,7 +860,7 @@
 											"font": "Arial;13;0",
 											"left": 293,
 											"top": 245,
-											"width": 356.890625,
+											"width": 360.1533203125,
 											"height": 13,
 											"text": "-database: FirebaseFirestore",
 											"horizontalAlignment": 0
@@ -869,7 +869,7 @@
 									"font": "Arial;13;0",
 									"left": 288,
 									"top": 225,
-									"width": 366.890625,
+									"width": 370.1533203125,
 									"height": 38
 								},
 								{
@@ -894,9 +894,9 @@
 											"font": "Arial;13;0",
 											"left": 293,
 											"top": 268,
-											"width": 356.890625,
+											"width": 360.1533203125,
 											"height": 13,
-											"text": "-writeNewUser(userId: String, username: String, email: String)",
+											"text": "+writeNewUser(userId: String, username: String, email: String)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -911,16 +911,16 @@
 											"font": "Arial;13;0",
 											"left": 293,
 											"top": 283,
-											"width": 356.890625,
+											"width": 360.1533203125,
 											"height": 13,
-											"text": "-onCreate(savedInstanceState: Bundle?)",
+											"text": "+onCreate(savedInstanceState: Bundle?)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 288,
 									"top": 263,
-									"width": 366.890625,
+									"width": 370.1533203125,
 									"height": 38
 								},
 								{
@@ -958,7 +958,7 @@
 							"containerChangeable": true,
 							"left": 288,
 							"top": 200,
-							"width": 366.890625,
+							"width": 370.1533203125,
 							"height": 153,
 							"nameCompartment": {
 								"$ref": "AAAAAAFp5GsJ0U11rEc="
@@ -1266,7 +1266,6 @@
 								"$ref": "AAAAAAFp5GsJ0U1y9EM="
 							},
 							"name": "writeNewUser",
-							"visibility": "private",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -1304,7 +1303,6 @@
 								"$ref": "AAAAAAFp5GsJ0U1y9EM="
 							},
 							"name": "onCreate",
-							"visibility": "private",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
