@@ -33,6 +33,10 @@ class MainActivity : AppCompatActivity() {
                 auth.signOut()
                 checkLoginStatus()
             }
+            R.id.menu_settings -> {
+                val intent = Intent(baseContext, SettingsActivity::class.java)
+                startActivity(intent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
