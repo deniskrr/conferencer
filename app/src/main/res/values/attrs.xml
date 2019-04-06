@@ -2,4 +2,5 @@
 <resources>
     <attr name="button" format="reference" />
     <attr name="edittext" format="reference" />
+    <attr name="edittextPrimary" format="reference"/>
 </resources>

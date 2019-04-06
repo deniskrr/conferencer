@@ -3,7 +3,8 @@
     
     <style name="Theme.Conforange" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="button">@style/Widget.Button.Primary</item>
-        <item name="edittext"> @style/Widget.EditText.Primary</item>
+        <item name="edittext">@style/Widget.EditText.White</item>
+        <item name="edittextPrimary"></item>
     </style>
     
 </resources>

@@ -18,9 +18,15 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="Widget.EditText.Primary" parent="Widget.AppCompat.EditText">
+    <style name="Widget.EditText.White" parent="Widget.AppCompat.EditText">
         <item name="android:background"> @drawable/edittext_rounded_white</item>
         <item name="android:padding"> @dimen/edittext_padding_horizontal</item>
     </style>
+
+    <style name="Widget.EditText.Primary" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edittext_rounded_primary</item>
+        <item name="android:padding">@dimen/edittext_padding_horizontal</item>
+    </style>
+
 
 </resources>
