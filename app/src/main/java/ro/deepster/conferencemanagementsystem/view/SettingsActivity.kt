@@ -1,6 +1,7 @@
 package ro.deepster.conferencemanagementsystem.view
 
 import android.os.Bundle
+import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import ro.deepster.conferencemanagementsystem.R
 
@@ -12,4 +13,10 @@ class SettingsActivity : AppCompatActivity() {
 
         setTitle("Settings")
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.settings_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
 }
