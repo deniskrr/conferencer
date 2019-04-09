@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/auth_navigation"
+            app:startDestination="@id/registerFragment">
+
+    <fragment android:id="@+id/registerFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.auth.RegisterFragment"
+              android:label="register_fragment" tools:layout="@layout/register_fragment">
+        <action android:id="@+id/action_register_to_login" app:destination="@id/loginFragment"
+                app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+        <action android:id="@+id/action_registerFragment_to_mainActivity" app:destination="@id/mainActivity"/>
+    </fragment>
+    <fragment android:id="@+id/loginFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.ui.auth.LoginFragment"
+              android:label="LoginFragment" tools:layout="@layout/login_fragment">
+        <action android:id="@+id/action_login_to_register" app:destination="@id/registerFragment"
+                app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+        <action android:id="@+id/action_loginFragment_to_mainActivity" app:destination="@id/mainActivity"/>
+    </fragment>
+    <activity android:id="@+id/mainActivity" android:name="ro.deepster.conferencemanagementsystem.view.MainActivity"
+              android:label="activity_main" tools:layout="@layout/activity_main"/>
+</navigation>
