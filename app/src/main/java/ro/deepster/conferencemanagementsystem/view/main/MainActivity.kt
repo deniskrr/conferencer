@@ -7,6 +7,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import ro.deepster.conferencemanagementsystem.R
+import ro.deepster.conferencemanagementsystem.view.SettingsActivity
 import ro.deepster.conferencemanagementsystem.view.auth.AuthActivity
 
 class MainActivity : AppCompatActivity() {
