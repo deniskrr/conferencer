@@ -24,7 +24,7 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_loginFragment_to_registerFragment">
+                            <entry key="action_login_to_register">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -57,12 +57,12 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_registerFragment_to_loginFragment2">
+                            <entry key="action_register_to_login">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_registerFragment_to_mainActivity">
+                            <entry key="action_register_to_main">
                               <value>
                                 <LayoutPositions />
                               </value>
