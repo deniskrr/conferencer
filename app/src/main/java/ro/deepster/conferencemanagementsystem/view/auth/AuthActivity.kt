@@ -1,4 +1,4 @@
-package ro.deepster.conferencemanagementsystem.view
+package ro.deepster.conferencemanagementsystem.view.auth
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +11,7 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.auth_activity)
 
-        val navController = findNavController(this, R.id.main_content)
+        val navController = findNavController(this, R.id.auth_content)
 
 
 
