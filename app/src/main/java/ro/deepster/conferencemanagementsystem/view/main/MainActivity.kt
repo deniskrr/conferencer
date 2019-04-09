@@ -1,4 +1,4 @@
-package ro.deepster.conferencemanagementsystem.view
+package ro.deepster.conferencemanagementsystem.view.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import ro.deepster.conferencemanagementsystem.R
+import ro.deepster.conferencemanagementsystem.view.auth.AuthActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkLoginStatus() {
         if (auth.currentUser == null) {
-            val intent = Intent(baseContext, LoginActivity::class.java)
+            val intent = Intent(baseContext, AuthActivity::class.java)
             startActivity(intent)
             finish()
         }
