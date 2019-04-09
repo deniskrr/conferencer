@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.register_fragment.*
 import ro.deepster.conferencemanagementsystem.R
+import ro.deepster.conferencemanagementsystem.viewmodel.AuthViewModel
 
 class RegisterFragment : Fragment() {
 
@@ -29,11 +30,9 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(AuthViewModel::class.java)
 
-        // Initialize Firebase components
-        auth = FirebaseAuth.getInstance()
 
+        viewModel = activity!!.run { ViewModelProviders.of(this).get(AuthViewModel::class.java) }
 
         button_register.setOnClickListener {
             val username = edittext_username_register.text.toString()
@@ -45,21 +44,13 @@ class RegisterFragment : Fragment() {
             val email = edittext_email_register.text.toString()
             val password = edittext_password_register.text.toString()
 
-            auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(activity, "Successfully signed up", Toast.LENGTH_LONG)
-                            .show()
+            viewModel.registerUser(username, email, password)
+        }
 
-                        // Write user to database
-                        val userId = auth.currentUser!!.uid
-                        viewModel.writeNewUser(userId, username, email)
 
-                    } else {
-                        Toast.makeText(activity, "Sign-up failed", Toast.LENGTH_LONG)
-                            .show()
-                    }
-                }
+        text_account_register.setOnClickListener {
+            val navController = findNavController(it)
+            navController.navigate(R.id.action_register_to_login)
         }
 
 
