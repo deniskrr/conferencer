@@ -1,4 +1,4 @@
-package ro.deepster.conferencemanagementsystem.view.ui.auth
+package ro.deepster.conferencemanagementsystem.view.auth
 
 
 import android.os.Bundle

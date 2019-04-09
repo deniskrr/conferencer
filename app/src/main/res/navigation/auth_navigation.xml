@@ -5,7 +5,7 @@
             app:startDestination="@id/registerFragment">
 
     <fragment android:id="@+id/registerFragment"
-              android:name="ro.deepster.conferencemanagementsystem.view.ui.auth.RegisterFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.auth.RegisterFragment"
               android:label="register_fragment" tools:layout="@layout/register_fragment">
         <action android:id="@+id/action_register_to_login" app:destination="@id/loginFragment"
                 app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"
