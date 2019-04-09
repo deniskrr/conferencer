@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation.findNavController
-import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.register_fragment.*
 import ro.deepster.conferencemanagementsystem.R
 import ro.deepster.conferencemanagementsystem.viewmodel.AuthViewModel
@@ -18,7 +17,6 @@ class RegisterFragment : Fragment() {
         fun newInstance() = RegisterFragment()
     }
 
-    private lateinit var auth: FirebaseAuth
     private lateinit var viewModel: AuthViewModel
 
     override fun onCreateView(
