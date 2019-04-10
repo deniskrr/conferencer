@@ -45,14 +45,14 @@ class RegisterFragment : Fragment() {
         })
 
         button_register.setOnClickListener {
-            val username = edittext_username_register.text.toString()
+            val username = textlayout_username_register.editText?.text.toString()
 
             if (username.isBlank()) {
                 return@setOnClickListener
             }
 
-            val email = edittext_email_register.text.toString()
-            val password = edittext_password_register.text.toString()
+            val email = textlayout_email_register.editText?.text.toString()
+            val password = textlayout_password_register.editText?.text.toString()
 
             viewModel.registerUser(username, email, password)
         }
