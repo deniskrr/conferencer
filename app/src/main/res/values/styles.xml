@@ -6,7 +6,7 @@
     <!-- =============================================================== -->
 
 
-    <style name="Theme.Conforange" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="Theme.Conforange" parent="Theme.MaterialComponents">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorBackgroundFloating">@color/colorSecondary</item>
     </style>
