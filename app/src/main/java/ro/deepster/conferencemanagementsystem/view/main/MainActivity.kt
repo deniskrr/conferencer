@@ -7,6 +7,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import ro.deepster.conferencemanagementsystem.R
+import ro.deepster.conferencemanagementsystem.view.SettingsActivity
 import ro.deepster.conferencemanagementsystem.view.auth.AuthActivity
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity() {
             R.id.menu_sign_out -> {
                 auth.signOut()
                 checkLoginStatus()
+            }
+            R.id.menu_settings -> {
+                val intent = Intent(baseContext, SettingsActivity::class.java)
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)

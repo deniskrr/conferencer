@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    
-    <style name="Theme.Conforange" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="button">@style/Widget.Button.Primary</item>
-        <item name="edittext"> @style/Widget.EditText.Primary</item>
-    </style>
-    
-</resources>
