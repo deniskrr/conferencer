@@ -4,39 +4,11 @@
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
         tools:context=".view.main.MainActivity">
-
-    <Button
-            android:text="Open"
-            android:layout_width="0dp"
-            android:layout_height="50dp" android:id="@+id/button_open_main"
-            style="?button" android:layout_marginBottom="16dp" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="16dp"
-            android:layout_marginEnd="16dp" app:layout_constraintEnd_toStartOf="@+id/guideline"
-            android:layout_marginRight="16dp"/>
-    <Button
-            android:text="Create"
-            android:layout_width="0dp"
-            android:layout_height="50dp" android:id="@+id/button_create_main"
-            style="?button"
-            android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginRight="16dp"
-            android:layout_marginStart="16dp" android:layout_marginLeft="16dp"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintBaseline_toBaselineOf="@+id/button_open_main"/>
-    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                                android:id="@+id/guideline"
-                                                android:orientation="vertical"
-                                                app:layout_constraintGuide_percent="0.5"/>
-    <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@color/colorPrimaryLight" android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_open_main" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="16dp" android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp" android:layout_marginRight="16dp" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toTopOf="parent" android:id="@+id/recyclerview_conferences_main"
-            android:scrollbars="vertical"/>
+    <fragment
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" app:navGraph="@navigation/main_navigation" app:defaultNavHost="true"
+            android:id="@+id/fragment"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
