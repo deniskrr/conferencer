@@ -6,8 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import kotlinx.android.synthetic.main.new_conference_fragment.*
 import ro.deepster.conferencemanagementsystem.R
+import ro.deepster.conferencemanagementsystem.viewmodel.MainViewModel
 
 class NewConferenceFragment : Fragment() {
 
@@ -21,13 +24,18 @@ class NewConferenceFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_new_conference, container, false)
+        return inflater.inflate(R.layout.new_conference_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        viewModel.users.observe(this, Observer {
+            spinner_co_chair_new.setItems(viewModel.getUsers())
+            spinner_reviewers_new.setItems(viewModel.getUsers())
+        })
+
     }
 
 }
