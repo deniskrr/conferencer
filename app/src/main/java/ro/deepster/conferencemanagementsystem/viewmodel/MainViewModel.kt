@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import ro.deepster.conferencemanagementsystem.model.Conference
 
 class MainViewModel : ViewModel() {
 
@@ -14,6 +15,21 @@ class MainViewModel : ViewModel() {
             }
             users.value = snapshot
         }
+    }
+
+    private val conferenceSnapshot = FirebaseFirestore.getInstance().collection("conferences").apply {
+        addSnapshotListener { snapshot, exception ->
+            if (exception != null) {
+                return@addSnapshotListener
+            }
+            conferences.value = snapshot
+        }
+    }
+
+    val conferences: MutableLiveData<QuerySnapshot> by lazy {
+        MutableLiveData<QuerySnapshot>()
+    }.apply {
+        conferenceSnapshot
     }
 
     val users: MutableLiveData<QuerySnapshot> by lazy {
@@ -33,6 +49,23 @@ class MainViewModel : ViewModel() {
         }
 
         return userList
+    }
+
+    fun getConferences(): List<String> {
+        val conferenceList = mutableListOf<String>()
+
+        val documents = conferences.value?.documents
+        if (documents != null) {
+            for (conference in documents) {
+                conferenceList.add(conference.id)
+            }
+        }
+
+        return conferenceList
+    }
+
+    fun addConference(conference: Conference) {
+        conferenceSnapshot.document(conference.title).set(conference)
     }
 
 
