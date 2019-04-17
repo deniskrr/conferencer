@@ -19,68 +19,64 @@
                                                        android:layout_marginTop="16dp" android:layout_marginRight="16dp"
                                                        android:layout_marginEnd="16dp"
                                                        android:layout_marginBottom="16dp">
-        <ScrollView
+        <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:scrollbarStyle="insideOverlay">
-            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_height="match_parent">
+            <com.jaredrummler.materialspinner.MaterialSpinner android:layout_width="0dp"
+                                                              android:layout_height="wrap_content"
+                                                              android:id="@+id/spinner_co_chair_new"
+                                                              app:layout_constraintEnd_toEndOf="@+id/textlayout_title_new"
+                                                              app:layout_constraintStart_toStartOf="@+id/textlayout_title_new"
+                                                              android:layout_marginTop="8dp"
+                                                              app:layout_constraintTop_toBottomOf="@+id/textlayout_title_new"
+                                                              app:ms_background_color="@color/colorSecondaryLight"
+                                                              app:ms_hint="Co-chairs"/>
+            <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                <com.jaredrummler.materialspinner.MaterialSpinner android:layout_width="0dp"
-                                                                  android:layout_height="wrap_content"
-                                                                  android:id="@+id/spinner_co_chair_new"
-                                                                  app:layout_constraintEnd_toEndOf="@+id/textlayout_title_new"
-                                                                  app:layout_constraintStart_toStartOf="@+id/textlayout_title_new"
-                                                                  android:layout_marginTop="8dp"
-                                                                  app:layout_constraintTop_toBottomOf="@+id/textlayout_title_new"
-                                                                  app:ms_background_color="@color/colorSecondaryLight"
-                                                                  app:ms_hint="Co-chairs"/>
-                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="16dp"
+                    android:hint="Title"
+                    android:layout_marginEnd="16dp" android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:id="@+id/textlayout_title_new" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="16dp"
-                        android:hint="Title"
-                        android:layout_marginEnd="16dp" android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:id="@+id/textlayout_title_new" app:layout_constraintTop_toTopOf="parent"
-                        android:layout_marginTop="16dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                    />
-                </com.google.android.material.textfield.TextInputLayout>
-                <com.jaredrummler.materialspinner.MaterialSpinner android:layout_width="0dp"
-                                                                  android:layout_height="wrap_content"
-                                                                  app:ms_background_color="@color/colorSecondaryLight"
-                                                                  app:ms_hint="Reviewers"
-                                                                  android:layout_marginTop="16dp"
-                                                                  app:layout_constraintTop_toBottomOf="@+id/spinner_co_chair_new"
-                                                                  app:layout_constraintStart_toStartOf="@+id/textlayout_title_new"
-                                                                  app:layout_constraintEnd_toEndOf="@+id/textlayout_title_new"
-                                                                  android:id="@+id/spinner_reviewers_new"/>
-                <com.google.android.material.button.MaterialButton
-                        android:text="Create"
-                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/button_create_new" app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                        android:layout_marginRight="8dp"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintTop_toBottomOf="@+id/recycler_reviewers_new"
-                        android:layout_marginTop="32dp"/>
-                <androidx.recyclerview.widget.RecyclerView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintStart_toStartOf="@+id/textlayout_title_new"
-                        app:layout_constraintEnd_toEndOf="@+id/textlayout_title_new" android:layout_marginTop="16dp"
-                        app:layout_constraintTop_toBottomOf="@+id/spinner_reviewers_new"
-                        android:id="@+id/recycler_reviewers_new" android:background="@color/colorSecondaryLight"
-                        android:padding="16dp"/>
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.jaredrummler.materialspinner.MaterialSpinner android:layout_width="0dp"
+                                                              android:layout_height="wrap_content"
+                                                              app:ms_background_color="@color/colorSecondaryLight"
+                                                              app:ms_hint="Reviewers"
+                                                              android:layout_marginTop="16dp"
+                                                              app:layout_constraintTop_toBottomOf="@+id/spinner_co_chair_new"
+                                                              app:layout_constraintStart_toStartOf="@+id/textlayout_title_new"
+                                                              app:layout_constraintEnd_toEndOf="@+id/textlayout_title_new"
+                                                              android:id="@+id/spinner_reviewers_new"/>
+            <com.google.android.material.button.MaterialButton
+                    android:text="Create"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_create_new" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintStart_toStartOf="@+id/textlayout_title_new"
+                    app:layout_constraintEnd_toEndOf="@+id/textlayout_title_new" android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/spinner_reviewers_new"
+                    android:id="@+id/recycler_reviewers_new"
+                    android:padding="16dp" android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/button_create_new"/>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
