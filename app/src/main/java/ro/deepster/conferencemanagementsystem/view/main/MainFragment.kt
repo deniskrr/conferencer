@@ -5,11 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_fragment.*
 import ro.deepster.conferencemanagementsystem.R
+import ro.deepster.conferencemanagementsystem.model.ConferenceItem
 import ro.deepster.conferencemanagementsystem.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
@@ -37,6 +42,20 @@ class MainFragment : Fragment() {
             controller.navigate(R.id.action_main_to_new)
         }
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+
+        val adapter = GroupAdapter<ViewHolder>()
+        recycler_conferences_main.adapter = adapter
+        recycler_conferences_main.layoutManager = LinearLayoutManager(activity)
+
+        viewModel.conferences.observe(this, Observer {
+            adapter.clear()
+
+            adapter.addAll(
+                viewModel.getConferences().map { title ->
+                    ConferenceItem(title)
+                }
+            )
+        })
     }
 
 }
