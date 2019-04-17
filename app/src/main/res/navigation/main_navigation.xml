@@ -6,5 +6,15 @@
 
     <fragment android:id="@+id/mainFragment"
               android:name="ro.deepster.conferencemanagementsystem.view.main.MainFragment" android:label="main_fragment"
-              tools:layout="@layout/main_fragment"/>
+              tools:layout="@layout/main_fragment">
+        <action android:id="@+id/action_main_to_new"
+                app:destination="@id/newConferenceFragment" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+    <fragment android:id="@+id/newConferenceFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.main.NewConferenceFragment"
+              android:label="fragment_new_conference" tools:layout="@layout/new_conference_fragment">
+        <action android:id="@+id/action_newConferenceFragment_to_mainFragment" app:destination="@id/mainFragment"/>
+    </fragment>
 </navigation>

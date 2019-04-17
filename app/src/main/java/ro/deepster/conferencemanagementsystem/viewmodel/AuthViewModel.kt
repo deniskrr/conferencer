@@ -21,7 +21,7 @@ class AuthViewModel : ViewModel() {
 
     fun writeNewUser(userId: String, username: String, email: String) {
         val user = User(userId, username, email)
-        database.collection("users").document(userId)
+        database.collection("users").document(username)
             .set(user)
     }
 

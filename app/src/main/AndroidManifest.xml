@@ -19,6 +19,10 @@
         <activity android:name=".view.auth.AuthActivity">
         </activity>
         <activity android:name=".view.SettingsActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".view.main.MainActivity">
+            </meta-data>
         </activity>
     </application>
 
