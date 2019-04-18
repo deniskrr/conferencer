@@ -19,7 +19,14 @@ class AuthViewModel : ViewModel() {
         MutableLiveData<FirebaseUser>()
     }.apply { auth.currentUser }
 
-    fun writeNewUser(userId: String, username: String, email: String) {
+    fun writeNewUser(
+        userId: String,
+        username: String,
+        email: String,
+        name: String = "",
+        affiliation: String = "",
+        web: String = ""
+    ) {
         val user = User(userId, username, email)
         database.collection("users").document(username)
             .set(user)
