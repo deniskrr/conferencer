@@ -5,9 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_settings.*
-import kotlinx.android.synthetic.main.activity_settings.view.*
 import ro.deepster.conferencemanagementsystem.R
-import ro.deepster.conferencemanagementsystem.model.User
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -26,24 +24,18 @@ class SettingsActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.menu_save_settings -> {
-                //TODO If the values entered are correct, then create a new User object and write it to the database
-                if (!textlayout_email_settings.editText?.text.isNullOrBlank()){
-                    val email = textlayout_email_settings.editText?.text.toString()
+                textlayout_name_settings.error = null
+                textlayout_web_page_settings.error = null
+                textlayout_affiliation_settings.error = null
+
+                if (textlayout_name_settings.editText?.text.isNullOrBlank()) {
+                    textlayout_name_settings.error = "Name can't be empty"
                 }
-                if (!textlayout_user_name_settings.editText?.text.isNullOrBlank()){
-                    val username = textlayout_user_name_settings.editText?.text.toString()
+                if (textlayout_affiliation_settings.editText?.text.isNullOrBlank()) {
+                    textlayout_affiliation_settings.error = "Affiliation can't be empty"
                 }
-                if (!textlayout_password_settings.editText?.text.isNullOrBlank()){
-                    val password = textlayout_password_settings.editText?.text.toString()
-                }
-                if (!textlayout_name_settings.editText?.text.isNullOrBlank()){
-                    val name = textlayout_name_settings.editText?.text.toString()
-                }
-                if (!textlayout_affiliation_settings.editText?.text.isNullOrBlank()){
-                    val affiliation = textlayout_affiliation_settings.editText?.text.toString()
-                }
-                if (!textlayout_web_page_settings.editText?.text.isNullOrBlank()){
-                    val web_page = textlayout_web_page_settings.editText?.text.toString()
+                if (textlayout_web_page_settings.editText?.text.isNullOrBlank()) {
+                    textlayout_web_page_settings.error = "Web page can't be empty"
                 }
 
 
