@@ -8,12 +8,12 @@ data class User(
     val uid: String,
     var username: String,
     var email: String,
-    var name: String,
-    var affiliation: String,
-    var web_page: String
+    var name: String = "",
+    var affiliation: String = "",
+    var web_page: String = ""
 ) {
 
-    constructor() : this("", "", "", "", "", "" ) {}
+    constructor() : this("", "", "", "", "", "") {}
 
     @Exclude
     fun toMap(): Map<String, Any?> {
