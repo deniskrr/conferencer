@@ -19,8 +19,8 @@ class AuthViewModel : ViewModel() {
         MutableLiveData<FirebaseUser>()
     }.apply { auth.currentUser }
 
-    fun writeNewUser(userId: String, username: String, email: String) {
-        val user = User(userId, username, email)
+    fun writeNewUser(userId: String, username: String, email: String, name: String, aff: String, web: String) {
+        val user = User(userId, username, email, name, aff, web)
         database.collection("users").document(userId)
             .set(user)
     }
@@ -29,12 +29,12 @@ class AuthViewModel : ViewModel() {
         auth.signInWithEmailAndPassword(email, password)
     }
 
-    fun registerUser(username: String, email: String, password: String) {
+    fun registerUser(username: String, email: String, password: String, name: String, aff: String, web: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val userId = currentUser.value!!.uid
-                    writeNewUser(userId, username, email)
+                    writeNewUser(userId, username, email, name, aff, web)
                 }
             }
     }

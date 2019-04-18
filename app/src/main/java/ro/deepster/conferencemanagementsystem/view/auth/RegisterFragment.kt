@@ -54,7 +54,7 @@ class RegisterFragment : Fragment() {
             val email = textlayout_email_register.editText?.text.toString()
             val password = textlayout_password_register.editText?.text.toString()
 
-            viewModel.registerUser(username, email, password)
+            viewModel.registerUser(username, email, password, "", "", "")
         }
 
 
