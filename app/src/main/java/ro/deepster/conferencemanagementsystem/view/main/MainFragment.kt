@@ -1,5 +1,6 @@
 package ro.deepster.conferencemanagementsystem.view.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_fragment.*
 import ro.deepster.conferencemanagementsystem.R
 import ro.deepster.conferencemanagementsystem.model.ConferenceItem
+import ro.deepster.conferencemanagementsystem.view.conference.RoleActivity
 import ro.deepster.conferencemanagementsystem.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
@@ -44,6 +46,15 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
         val adapter = GroupAdapter<ViewHolder>()
+
+        // Set adapter item onClickListener to navigate to Conference activity
+        adapter.setOnItemClickListener { item, view ->
+            if (item is ConferenceItem) {
+                val intent = Intent(context, RoleActivity::class.java)
+                intent.putExtra(RoleActivity.CONFERENCE_NAME, item.conference)
+                startActivity(intent)
+            }
+        }
         recycler_conferences_main.adapter = adapter
         recycler_conferences_main.layoutManager = LinearLayoutManager(activity)
 
