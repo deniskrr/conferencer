@@ -9,7 +9,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.Conforange">
-        <activity android:name=".view.conference.RoleActivity">
+        <activity android:name=".view.roles.RoleActivity">
         </activity>
         <activity android:name=".view.main.MainActivity">
             <intent-filter>

@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_fragment.*
 import ro.deepster.conferencemanagementsystem.R
 import ro.deepster.conferencemanagementsystem.model.ConferenceItem
-import ro.deepster.conferencemanagementsystem.view.conference.RoleActivity
+import ro.deepster.conferencemanagementsystem.view.roles.RoleActivity
 import ro.deepster.conferencemanagementsystem.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {

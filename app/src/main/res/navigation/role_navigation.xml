@@ -4,7 +4,7 @@
             android:id="@+id/role_navigation"
             app:startDestination="@id/genericRoleFragment">
     <fragment android:id="@+id/genericRoleFragment"
-              android:name="ro.deepster.conferencemanagementsystem.view.conference.GenericRoleFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.roles.GenericRoleFragment"
               android:label="fragment_generic_role" tools:layout="@layout/fragment_generic_role">
         <action android:id="@+id/action_generic_to_author" app:destination="@id/authorFragment"
                 app:launchSingleTop="false" app:enterAnim="@anim/nav_default_enter_anim"
@@ -12,6 +12,6 @@
                 app:popExitAnim="@anim/nav_default_pop_exit_anim" app:popUpTo="@+id/role_navigation"/>
     </fragment>
     <fragment android:id="@+id/authorFragment"
-              android:name="ro.deepster.conferencemanagementsystem.view.conference.AuthorFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.roles.author.AuthorFragment"
               android:label="fragment_author" tools:layout="@layout/fragment_author"/>
 </navigation>

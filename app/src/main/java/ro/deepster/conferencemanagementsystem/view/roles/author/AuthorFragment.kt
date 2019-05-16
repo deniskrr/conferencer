@@ -1,4 +1,4 @@
-package ro.deepster.conferencemanagementsystem.view.conference
+package ro.deepster.conferencemanagementsystem.view.roles.author
 
 
 import android.os.Bundle
