@@ -13,5 +13,11 @@
     </fragment>
     <fragment android:id="@+id/authorFragment"
               android:name="ro.deepster.conferencemanagementsystem.view.roles.author.AuthorFragment"
-              android:label="fragment_author" tools:layout="@layout/fragment_author"/>
+              android:label="fragment_author" tools:layout="@layout/fragment_author">
+        <action android:id="@+id/action_author_to_new_proposal"
+                app:destination="@id/addProposalFragment"/>
+    </fragment>
+    <fragment android:id="@+id/addProposalFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.roles.author.AddProposalFragment"
+              android:label="fragment_add_proposal" tools:layout="@layout/fragment_add_proposal"/>
 </navigation>

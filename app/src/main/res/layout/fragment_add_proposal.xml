@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   tools:context=".view.roles.author.AddProposalFragment"
+                                                   android:id="@+id/frameLayout3">
+
+    <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                                                       android:layout_height="0dp"
+                                                       tools:layout_conversion_absoluteHeight="603dp"
+                                                       tools:layout_conversion_absoluteWidth="411dp"
+                                                       app:layout_constraintStart_toStartOf="parent"
+                                                       app:layout_constraintTop_toTopOf="parent"
+                                                       app:layout_constraintBottom_toBottomOf="parent"
+                                                       android:layout_marginBottom="16dp"
+                                                       android:layout_marginTop="16dp" android:layout_marginLeft="16dp"
+                                                       android:layout_marginStart="16dp"
+                                                       app:layout_constraintEnd_toEndOf="parent"
+                                                       android:layout_marginEnd="16dp"
+                                                       android:layout_marginRight="16dp">
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" android:id="@+id/textlayout_topics_new"
+                        app:layout_constraintTop_toBottomOf="@+id/textlayout_keywords_new"
+                        app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginRight="16dp" android:layout_marginEnd="16dp" android:hint="Topics"
+                        android:layout_marginTop="16dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                    />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp" android:id="@+id/textlayout_keywords_new"
+                        app:layout_constraintTop_toBottomOf="@+id/textlayout_title_proposal"
+                        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
+                        android:layout_marginRight="16dp" android:layout_marginEnd="16dp"
+                        android:layout_marginTop="16dp" android:hint="Keywords">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                    />
+                </com.google.android.material.textfield.TextInputLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" android:id="@+id/recycler_authors_new"
+                        app:layout_constraintStart_toStartOf="@+id/textlayout_title_proposal"
+                        app:layout_constraintEnd_toEndOf="@+id/textlayout_title_proposal"
+                        app:layout_constraintTop_toBottomOf="@+id/spinner_authors_new"
+                        android:layout_marginTop="16dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/textlayout_title_proposal" android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp" android:layout_marginRight="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="16dp" android:hint="Title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                    />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.jaredrummler.materialspinner.MaterialSpinner android:layout_width="match_parent"
+                                                                  android:layout_height="wrap_content"
+                                                                  app:ms_background_color="@color/colorSecondaryLight"
+                                                                  app:ms_hint="Authors"
+                                                                  android:id="@+id/spinner_authors_new"
+                                                                  app:layout_constraintStart_toStartOf="parent"
+                                                                  app:layout_constraintEnd_toEndOf="parent"
+                                                                  app:layout_constraintTop_toBottomOf="@+id/textlayout_topics_new"
+                                                                  android:layout_marginTop="16dp"
+                                                                  android:layout_marginStart="16dp"
+                                                                  android:layout_marginLeft="16dp"
+                                                                  android:layout_marginRight="16dp"
+                                                                  android:layout_marginEnd="16dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
