@@ -29,12 +29,34 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="0dp" android:id="@+id/textlayout_topics_new"
-                        app:layout_constraintTop_toBottomOf="@+id/textlayout_keywords_new"
+                        android:layout_height="wrap_content" android:id="@+id/textlayout_abstract_proposal"
+                        app:layout_constraintTop_toBottomOf="@+id/textlayout_title_proposal"
+                        android:layout_marginTop="16dp" app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp" android:layout_marginRight="16dp"
+                        android:layout_marginEnd="16dp" android:hint="Abstract">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <Button
+                        android:text="Add proposal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" android:id="@+id/button_add_proposal"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/recycler_authors_proposal"
+                        app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="16dp" android:layout_marginRight="16dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" android:id="@+id/textlayout_topics_proposal"
                         app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
                         android:layout_marginRight="16dp" android:layout_marginEnd="16dp" android:hint="Topics"
-                        android:layout_marginTop="16dp">
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/textlayout_keywords_proposal">
 
                     <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
@@ -43,8 +65,8 @@
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="56dp" android:id="@+id/textlayout_keywords_new"
-                        app:layout_constraintTop_toBottomOf="@+id/textlayout_title_proposal"
+                        android:layout_height="56dp" android:id="@+id/textlayout_keywords_proposal"
+                        app:layout_constraintTop_toBottomOf="@+id/textlayout_abstract_proposal"
                         app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
                         android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
                         android:layout_marginRight="16dp" android:layout_marginEnd="16dp"
@@ -57,11 +79,12 @@
                 </com.google.android.material.textfield.TextInputLayout>
                 <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" android:id="@+id/recycler_authors_new"
-                        app:layout_constraintStart_toStartOf="@+id/textlayout_title_proposal"
-                        app:layout_constraintEnd_toEndOf="@+id/textlayout_title_proposal"
+                        android:layout_height="wrap_content" android:id="@+id/recycler_authors_proposal"
                         app:layout_constraintTop_toBottomOf="@+id/spinner_authors_new"
-                        android:layout_marginTop="16dp"/>
+                        android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginEnd="16dp" android:layout_marginRight="16dp"
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"/>
                 <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
@@ -84,12 +107,23 @@
                                                                   android:id="@+id/spinner_authors_new"
                                                                   app:layout_constraintStart_toStartOf="parent"
                                                                   app:layout_constraintEnd_toEndOf="parent"
-                                                                  app:layout_constraintTop_toBottomOf="@+id/textlayout_topics_new"
+                                                                  app:layout_constraintTop_toBottomOf="@+id/button_paper_proposal"
                                                                   android:layout_marginTop="16dp"
                                                                   android:layout_marginStart="16dp"
                                                                   android:layout_marginLeft="16dp"
                                                                   android:layout_marginRight="16dp"
                                                                   android:layout_marginEnd="16dp"/>
+                <Button
+                        android:text="Add paper"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_paper_proposal"
+                        app:layout_constraintTop_toBottomOf="@+id/textlayout_topics_proposal"
+                        android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </com.google.android.material.card.MaterialCardView>
