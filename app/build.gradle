@@ -41,6 +41,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.8'
     implementation 'com.google.firebase:firebase-auth:16.2.1'
     implementation 'com.google.firebase:firebase-firestore:18.2.0'
+    implementation 'com.google.firebase:firebase-storage:17.0.0'
 
 
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
