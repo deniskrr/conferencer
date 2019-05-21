@@ -18,8 +18,8 @@ class RoleActivity : AppCompatActivity() {
         val TAG = RoleActivity::class.java.canonicalName
     }
 
-    private lateinit var user: User
-    private lateinit var conference: Conference
+    lateinit var user: User
+    lateinit var conference: Conference
 
     //    lateinit var conference: Conference
     private lateinit var viewModel: RoleViewModel
