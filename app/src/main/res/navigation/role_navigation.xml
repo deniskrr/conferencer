@@ -29,8 +29,13 @@
               android:label="reviewer_fragment" tools:layout="@layout/reviewer_fragment">
         <action android:id="@+id/action_reviewer_to_bid_proposal"
                 app:destination="@id/bidProposalFragment"/>
+        <action android:id="@+id/action_reviewewr_to_evaluate_paper"
+                app:destination="@id/evaluatePaperFragment"/>
     </fragment>
     <fragment android:id="@+id/bidProposalFragment"
               android:name="ro.deepster.conferencemanagementsystem.view.roles.reviewer.BidProposalFragment"
               android:label="fragment_bid_proposal" tools:layout="@layout/fragment_bid_proposal"/>
+    <fragment android:id="@+id/evaluatePaperFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.roles.reviewer.EvaluatePaperFragment"
+              android:label="fragment_evaluate_paper" tools:layout="@layout/fragment_evaluate_paper"/>
 </navigation>
