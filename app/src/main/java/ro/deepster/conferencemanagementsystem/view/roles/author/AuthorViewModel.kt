@@ -30,7 +30,7 @@ class AuthorViewModel : RoleViewModel() {
                 .addOnSuccessListener {
                     reference.downloadUrl.addOnSuccessListener {
 
-                        val proposal = Proposal(title, topics, keywords, author, it.toString())
+                        val proposal = Proposal(title, abstract, topics, keywords, author, it.toString())
                         conference.addProposal(proposal)
                         FirebaseFirestore.getInstance().collection("conferences").document(conference.title)
                             .set(conference)
