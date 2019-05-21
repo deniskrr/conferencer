@@ -6,8 +6,13 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+
 android {
     compileSdkVersion 28
+
+    androidExtensions {
+        experimental = true
+    }
     defaultConfig {
         applicationId "ro.deepster.conferencemanagementsystem"
         minSdkVersion 16
