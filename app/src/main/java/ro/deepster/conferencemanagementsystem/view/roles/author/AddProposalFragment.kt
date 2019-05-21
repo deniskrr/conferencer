@@ -12,13 +12,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.fragment_add_proposal.*
 import ro.deepster.conferencemanagementsystem.R
-import ro.deepster.conferencemanagementsystem.view.roles.RoleActivity
-import ro.deepster.conferencemanagementsystem.viewmodel.RoleViewModel
 
 class AddProposalFragment : Fragment() {
 
     var selectedPaper: Uri? = null
-    lateinit var viewModel: RoleViewModel
+    lateinit var viewModel: AuthorViewModel
 
     companion object {
         val RESULT_ADD_PROPOSAL = 69
@@ -35,7 +33,7 @@ class AddProposalFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProviders.of(activity!!).get(RoleViewModel::class.java)
+        viewModel = ViewModelProviders.of(activity!!).get(AuthorViewModel::class.java)
 
         button_paper_proposal.setOnClickListener {
             val chooseFile = Intent(Intent.ACTION_GET_CONTENT)
@@ -49,9 +47,7 @@ class AddProposalFragment : Fragment() {
             val title = textlayout_title_proposal.editText!!.text.toString()
             val topics = textlayout_topics_proposal.editText!!.text.toString()
             val keywords = textlayout_keywords_proposal.editText!!.text.toString()
-            val author = (activity as RoleActivity).user.username
-            val conference = (activity as RoleActivity).conference
-            viewModel.addProposal(conference, title, topics, keywords, author, selectedPaper)
+            viewModel.addProposal(title, topics, keywords, selectedPaper)
         }
     }
 

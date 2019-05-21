@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.login_fragment.*
 import ro.deepster.conferencemanagementsystem.R
 import ro.deepster.conferencemanagementsystem.view.main.MainActivity
-import ro.deepster.conferencemanagementsystem.viewmodel.AuthViewModel
 
 class LoginFragment : Fragment() {
 

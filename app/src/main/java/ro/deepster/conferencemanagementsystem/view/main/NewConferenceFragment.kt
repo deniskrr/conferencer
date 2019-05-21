@@ -17,7 +17,6 @@ import kotlinx.android.synthetic.main.new_conference_fragment.*
 import ro.deepster.conferencemanagementsystem.R
 import ro.deepster.conferencemanagementsystem.model.Conference
 import ro.deepster.conferencemanagementsystem.model.ReviewerItem
-import ro.deepster.conferencemanagementsystem.viewmodel.MainViewModel
 
 class NewConferenceFragment : Fragment() {
 

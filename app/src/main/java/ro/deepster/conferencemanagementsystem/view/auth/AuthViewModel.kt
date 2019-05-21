@@ -1,4 +1,4 @@
-package ro.deepster.conferencemanagementsystem.viewmodel
+package ro.deepster.conferencemanagementsystem.view.auth
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
