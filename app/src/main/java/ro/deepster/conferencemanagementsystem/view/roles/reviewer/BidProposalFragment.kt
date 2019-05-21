@@ -74,6 +74,7 @@ class BidProposalFragment : Fragment() {
 
             adapter.addAll(
                 currentConference.proposals.filter { proposal: Proposal ->
+                    // Show proposals that you didn't bid on
                     currentUser !in proposal.bidders
                 }.map { proposal -> ProposalItem(proposal) }
             )
