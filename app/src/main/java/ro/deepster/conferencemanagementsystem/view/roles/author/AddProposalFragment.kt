@@ -9,17 +9,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.fragment_add_proposal.*
 import ro.deepster.conferencemanagementsystem.R
-import ro.deepster.conferencemanagementsystem.model.Proposal
+import ro.deepster.conferencemanagementsystem.view.roles.RoleActivity
 import ro.deepster.conferencemanagementsystem.viewmodel.RoleViewModel
 
 class AddProposalFragment : Fragment() {
 
-    var selectedPaper : Uri? = null
-    lateinit var viewModel : RoleViewModel
+    var selectedPaper: Uri? = null
+    lateinit var viewModel: RoleViewModel
 
     companion object {
         val RESULT_ADD_PROPOSAL = 69
@@ -37,7 +36,6 @@ class AddProposalFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProviders.of(activity!!).get(RoleViewModel::class.java)
-        viewModel.paperLink.value = ""
 
         button_paper_proposal.setOnClickListener {
             val chooseFile = Intent(Intent.ACTION_GET_CONTENT)
@@ -51,14 +49,9 @@ class AddProposalFragment : Fragment() {
             val title = textlayout_title_proposal.editText!!.text.toString()
             val topics = textlayout_topics_proposal.editText!!.text.toString()
             val keywords = textlayout_keywords_proposal.editText!!.text.toString()
-            if (selectedPaper != null) {
-                viewModel.uploadPaper(selectedPaper!!)
-            }
-            viewModel.paperLink.observe(this, Observer {
-                val paperLink = it
-                val paper = Proposal(title, topics, keywords, mutableListOf(), paperLink)
-                viewModel.addProposal(paper)
-            })
+            val author = (activity as RoleActivity).user.username
+            val conference = (activity as RoleActivity).conference
+            viewModel.addProposal(conference, title, topics, keywords, author, selectedPaper)
         }
     }
 
@@ -66,8 +59,8 @@ class AddProposalFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == RESULT_ADD_PROPOSAL && resultCode == RESULT_OK && data != null) {
+            // A paper was selected
             selectedPaper = data.data
-
         }
     }
 
