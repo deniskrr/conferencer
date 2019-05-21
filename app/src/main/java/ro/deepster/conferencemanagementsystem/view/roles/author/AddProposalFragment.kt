@@ -47,7 +47,8 @@ class AddProposalFragment : Fragment() {
             val title = textlayout_title_proposal.editText!!.text.toString()
             val topics = textlayout_topics_proposal.editText!!.text.toString()
             val keywords = textlayout_keywords_proposal.editText!!.text.toString()
-            viewModel.addProposal(title, topics, keywords, selectedPaper)
+            val abstract = textlayout_abstract_proposal.editText!!.text.toString()
+            viewModel.addProposal(title, abstract, topics, keywords, selectedPaper)
         }
     }
 

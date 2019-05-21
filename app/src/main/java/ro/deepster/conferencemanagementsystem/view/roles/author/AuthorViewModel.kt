@@ -12,6 +12,7 @@ class AuthorViewModel : RoleViewModel() {
 
     fun addProposal(
         title: String,
+        abstract: String,
         topics: String,
         keywords: String,
         selectedPaper: Uri?
@@ -36,7 +37,7 @@ class AuthorViewModel : RoleViewModel() {
                     }
                 }
         } else {
-            val proposal = Proposal(title, topics, keywords, author)
+            val proposal = Proposal(title, abstract, topics, keywords, author)
             conference.addProposal(proposal)
             FirebaseFirestore.getInstance().collection("conferences").document(conference.title).set(conference)
         }
