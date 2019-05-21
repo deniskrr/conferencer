@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -20,6 +21,10 @@ import ro.deepster.conferencemanagementsystem.model.ProposalItem
 
 
 class EvaluatePaperFragment : Fragment() {
+
+    companion object {
+        const val PROPOSAL = "proposal"
+    }
 
     val adapter = GroupAdapter<ViewHolder>()
     private lateinit var viewModel: ReviewerViewModel
@@ -40,7 +45,7 @@ class EvaluatePaperFragment : Fragment() {
         adapter.setOnItemClickListener { item, view ->
             if (item is ProposalItem) {
                 val controller = NavHostFragment.findNavController(role_content)
-                controller.navigate(R.id.action_evaluate_extended)
+                controller.navigate(R.id.action_evaluate_extended, bundleOf(PROPOSAL to item.proposal))
             }
         }
 
