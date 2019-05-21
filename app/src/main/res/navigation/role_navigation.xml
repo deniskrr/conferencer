@@ -37,5 +37,13 @@
               android:label="fragment_bid_proposal" tools:layout="@layout/fragment_bid_proposal"/>
     <fragment android:id="@+id/evaluatePaperFragment"
               android:name="ro.deepster.conferencemanagementsystem.view.roles.reviewer.EvaluatePaperFragment"
-              android:label="fragment_evaluate_paper" tools:layout="@layout/fragment_evaluate_paper"/>
+              android:label="fragment_evaluate_paper" tools:layout="@layout/fragment_evaluate_paper">
+        <action android:id="@+id/action_evaluate_extended"
+                app:destination="@id/evaluatePaperExtendedFragment" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+    <fragment android:id="@+id/evaluatePaperExtendedFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.roles.reviewer.EvaluatePaperExtendedFragment"
+              android:label="fragment_evaluate_paper_extended" tools:layout="@layout/fragment_evaluate_paper_extended"/>
 </navigation>
