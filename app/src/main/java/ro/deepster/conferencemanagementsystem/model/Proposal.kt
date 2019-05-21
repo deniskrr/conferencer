@@ -6,7 +6,10 @@ data class Proposal(
     val topics: String = "",
     val keywords: String = "",
     val author: String = "",
-    val paperLink: String = ""
-
-
-)
+    val paperLink: String = "",
+    val bidders: MutableList<String> = mutableListOf()
+) {
+    fun addBidder(bidder: String) {
+        bidders.add(bidder)
+    }
+}
