@@ -33,20 +33,24 @@ class RoleActivity : AppCompatActivity() {
 
             // Show the conference title in the action bar
             title = conference.title
+
             viewModel.currentUser.observe(this, Observer { user ->
                 when {
                     user.username == "admin" -> Log.d(TAG, "Starting admin")
                     //TODO Start admin
                     user.username == conference.co_chair -> Log.d(TAG, "Starting co-chair")
                     //TODO Start co-chair
-                    user.username in conference.reviewers -> Log.d(TAG, "Starting reviewer")
-                    //TODO Start reviewers
+                    user.username in conference.reviewers -> {
+                        Log.d(TAG, "Starting reviewer")
+                        controller.navigate(R.id.action_generic_to_reviewer)
+                    }
                     else -> {
                         Log.d(TAG, "Starting author")
                         controller.navigate(R.id.action_generic_to_author)
                     }
                 }
             })
+            viewModel.currentConference.removeObservers(this)
         })
     }
 

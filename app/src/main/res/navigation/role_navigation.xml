@@ -10,6 +10,10 @@
                 app:launchSingleTop="false" app:enterAnim="@anim/nav_default_enter_anim"
                 app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim"
                 app:popExitAnim="@anim/nav_default_pop_exit_anim" app:popUpTo="@+id/role_navigation"/>
+        <action android:id="@+id/action_generic_to_reviewer" app:destination="@id/reviewerFragment"
+                app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim"
+                app:popUpTo="@+id/role_navigation"/>
     </fragment>
     <fragment android:id="@+id/authorFragment"
               android:name="ro.deepster.conferencemanagementsystem.view.roles.author.AuthorFragment"
@@ -20,4 +24,13 @@
     <fragment android:id="@+id/addProposalFragment"
               android:name="ro.deepster.conferencemanagementsystem.view.roles.author.AddProposalFragment"
               android:label="fragment_add_proposal" tools:layout="@layout/fragment_add_proposal"/>
+    <fragment android:id="@+id/reviewerFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.roles.reviewer.ReviewerFragment"
+              android:label="reviewer_fragment" tools:layout="@layout/reviewer_fragment">
+        <action android:id="@+id/action_reviewer_to_bid_proposal"
+                app:destination="@id/bidProposalFragment"/>
+    </fragment>
+    <fragment android:id="@+id/bidProposalFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.roles.reviewer.BidProposalFragment"
+              android:label="fragment_bid_proposal" tools:layout="@layout/fragment_bid_proposal"/>
 </navigation>
