@@ -31,6 +31,16 @@ class ReviewerViewModel : RoleViewModel() {
         proposal.rejectProposal(user)
         conference.proposals.add(proposal)
         FirebaseFirestore.getInstance().collection("conferences").document(RoleActivity.conferenceName).set(conference)
+
+    }
+
+    fun sendMessage(proposal: Proposal, text: String) {
+        val currentUser = currentUser.value!!.username
+        val conference = currentConference.value!!
+        conference.proposals.remove(proposal)
+        proposal.sendMessage(currentUser, text)
+        conference.proposals.add(proposal)
+        FirebaseFirestore.getInstance().collection("conferences").document(RoleActivity.conferenceName).set(conference)
     }
 
 }
