@@ -38,8 +38,10 @@ class RoleActivity : AppCompatActivity() {
                 when {
                     user.username == "admin" -> Log.d(TAG, "Starting admin")
                     //TODO Start admin
-                    user.username == conference.co_chair -> Log.d(TAG, "Starting co-chair")
-                    //TODO Start co-chair
+                    user.username == conference.co_chair -> {
+                        Log.d(TAG, "Starting co-chair")
+                        controller.navigate(R.id.action_generic_to_cochair)
+                    }
                     user.username in conference.reviewers -> {
                         Log.d(TAG, "Starting reviewer")
                         controller.navigate(R.id.action_generic_to_reviewer)
