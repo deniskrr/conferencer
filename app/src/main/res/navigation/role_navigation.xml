@@ -60,5 +60,12 @@
     </fragment>
     <fragment android:id="@+id/undecidedPapersFragment"
               android:name="ro.deepster.conferencemanagementsystem.view.roles.co_chair.UndecidedPapersFragment"
-              android:label="fragment_undecided_papers" tools:layout="@layout/fragment_undecided_papers"/>
+              android:label="fragment_undecided_papers" tools:layout="@layout/fragment_undecided_papers">
+        <action android:id="@+id/action_undecided_papers_to_extended"
+                app:destination="@id/undecidedPapersExtendedFragment"/>
+    </fragment>
+    <fragment android:id="@+id/undecidedPapersExtendedFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.roles.co_chair.UndecidedPapersExtendedFragment"
+              android:label="fragment_undecided_papers_extended"
+              tools:layout="@layout/fragment_undecided_papers_extended"/>
 </navigation>
