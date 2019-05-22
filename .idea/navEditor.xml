@@ -126,6 +126,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="discussPaperFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="407" />
+                            <option name="y" value="-518" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="evaluatePaperExtendedFragment">
                     <value>
                       <LayoutPositions>

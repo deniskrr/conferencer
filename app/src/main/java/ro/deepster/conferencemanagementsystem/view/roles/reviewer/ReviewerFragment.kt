@@ -27,8 +27,10 @@ class ReviewerFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(activity!!).get(ReviewerViewModel::class.java)
 
-        button_evaluate_paper.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_reviewewr_to_evaluate_paper))
+
         button_bid_proposal.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_reviewer_to_bid_proposal))
+        button_evaluate_paper.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_reviewewr_to_evaluate_paper))
+        button_discuss_paper.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_reviewer_to_discuss_paper))
     }
 
 }

@@ -30,4 +30,12 @@
             app:layout_constraintStart_toStartOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="@+id/textView2" app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintTop_toBottomOf="@+id/button_bid_proposal" android:layout_marginTop="16dp"/>
+    <Button
+            android:text="Discuss Paper"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_discuss_paper" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/button_evaluate_paper"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
