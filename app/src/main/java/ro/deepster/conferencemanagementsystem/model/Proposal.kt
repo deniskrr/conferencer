@@ -15,6 +15,7 @@ data class Proposal(
     val keywords: String = "",
     val author: String = "",
     val paperLink: String = "",
+    val messages: MutableList<Message> = mutableListOf(),
     val bidders: MutableMap<String, Verdict> = mutableMapOf()
 ) : Parcelable {
     fun addBidder(bidder: String) {
@@ -27,5 +28,9 @@ data class Proposal(
 
     fun acceptProposal(bidder: String) {
         bidders[bidder] = Verdict.ACCEPTED
+    }
+
+    fun sendMessage(sender: String, text: String) {
+        messages.add(Message(sender, text))
     }
 }
