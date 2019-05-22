@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 enum class Verdict {
-    UNANSWERED, REJECTED, ACCEPTED
+    UNANSWERED, REJECTED, ACCEPTED, DISCUSS
 }
 
 @Parcelize

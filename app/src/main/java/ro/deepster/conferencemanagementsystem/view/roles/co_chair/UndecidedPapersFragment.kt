@@ -49,7 +49,7 @@ class UndecidedPapersFragment : Fragment() {
             if (item is ProposalItem) {
                 findNavController(role_content).navigate(
                     R.id.action_undecided_papers_to_extended,
-                    bundleOf(PROPOSAL to item.proposal.title)
+                    bundleOf(PROPOSAL to item.proposal)
                 )
             }
         }
