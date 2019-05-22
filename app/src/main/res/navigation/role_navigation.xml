@@ -74,5 +74,13 @@
               tools:layout="@layout/fragment_undecided_papers_extended"/>
     <fragment android:id="@+id/discussPaperFragment"
               android:name="ro.deepster.conferencemanagementsystem.view.roles.reviewer.DiscussPaperFragment"
-              android:label="fragment_discuss_paper" tools:layout="@layout/fragment_discuss_paper"/>
+              android:label="fragment_discuss_paper" tools:layout="@layout/fragment_discuss_paper">
+        <action android:id="@+id/action_discuss_to_extended"
+                app:destination="@id/discussPaperExtended" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim" app:popUpTo="@+id/reviewerFragment"/>
+    </fragment>
+    <fragment android:id="@+id/discussPaperExtended"
+              android:name="ro.deepster.conferencemanagementsystem.view.roles.reviewer.DiscussPaperExtendedFragment"
+              android:label="fragment_discuss_paper_extended" tools:layout="@layout/fragment_discuss_paper_extended"/>
 </navigation>
