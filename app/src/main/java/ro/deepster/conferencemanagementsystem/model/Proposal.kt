@@ -15,17 +15,17 @@ data class Proposal(
     val keywords: String = "",
     val author: String = "",
     val paperLink: String = "",
-    val bidders: MutableMap<String, String> = mutableMapOf()
+    val bidders: MutableMap<String, Verdict> = mutableMapOf()
 ) : Parcelable {
     fun addBidder(bidder: String) {
-        bidders[bidder] = Verdict.UNANSWERED.name
+        bidders[bidder] = Verdict.UNANSWERED
     }
 
     fun rejectProposal(bidder: String) {
-        bidders[bidder] = Verdict.REJECTED.name
+        bidders[bidder] = Verdict.REJECTED
     }
 
     fun acceptProposal(bidder: String) {
-        bidders[bidder] = Verdict.ACCEPTED.name
+        bidders[bidder] = Verdict.ACCEPTED
     }
 }
