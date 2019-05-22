@@ -14,7 +14,8 @@
                 app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"
                 app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim"
                 app:popUpTo="@+id/role_navigation"/>
-        <action android:id="@+id/action_generic_to_cochair" app:destination="@id/coChairFragment"/>
+        <action android:id="@+id/action_generic_to_cochair" app:destination="@id/coChairFragment"
+                app:popUpTo="@+id/role_navigation"/>
     </fragment>
     <fragment android:id="@+id/authorFragment"
               android:name="ro.deepster.conferencemanagementsystem.view.roles.author.AuthorFragment"
@@ -51,5 +52,13 @@
               android:label="fragment_evaluate_paper_extended" tools:layout="@layout/fragment_evaluate_paper_extended"/>
     <fragment android:id="@+id/coChairFragment"
               android:name="ro.deepster.conferencemanagementsystem.view.roles.co_chair.CoChairFragment"
-              android:label="co_chair_fragment" tools:layout="@layout/co_chair_fragment"/>
+              android:label="co_chair_fragment" tools:layout="@layout/co_chair_fragment">
+        <action android:id="@+id/action_cochair_to_undecided_paper"
+                app:destination="@+id/undecidedPapersFragment" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim" app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+    <fragment android:id="@+id/undecidedPapersFragment"
+              android:name="ro.deepster.conferencemanagementsystem.view.roles.co_chair.UndecidedPapersFragment"
+              android:label="fragment_undecided_papers" tools:layout="@layout/fragment_undecided_papers"/>
 </navigation>

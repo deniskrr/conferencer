@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.co_chair_fragment.*
 import ro.deepster.conferencemanagementsystem.R
 
 class CoChairFragment : Fragment() {
@@ -22,6 +24,7 @@ class CoChairFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(CoChairViewModel::class.java)
-    }
 
+        button_undecided_evaluations.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_cochair_to_undecided_paper))
+    }
 }
